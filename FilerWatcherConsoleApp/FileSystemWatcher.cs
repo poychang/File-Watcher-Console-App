@@ -11,14 +11,14 @@ namespace FilerWatcherConsoleApp
         private StringBuilder _sb;
         private DirectoryInfo _dirInfo;
         private readonly System.IO.FileSystemWatcher _watch;
-        private int _lastLineBuffer;
+        private readonly int _lastLineBuffer;
 
-        public FileSystemWatcher(string watchPath, int lastLineBuffer)
+        public FileSystemWatcher(string watchFolder, int lastLineBuffer)
         {
             _watch = new System.IO.FileSystemWatcher
             {
                 // 設定所要監控的資料夾
-                Path = watchPath,
+                Path = watchFolder,
                 // 設定所要監控的變更類型
                 NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName,
                 // 設定所要監控的檔案類型
@@ -97,6 +97,7 @@ namespace FilerWatcherConsoleApp
             _sb.AppendLine($"被異動的檔名為：{e.Name}");
             _sb.AppendLine($"檔案所在位址為：{e.FullPath.Replace(e.Name, "")}");
             _sb.AppendLine($"異動內容時間為：{_dirInfo.LastWriteTime}");
+            _sb.AppendLine($"異動內容：");
 
             Console.WriteLine(_sb.ToString());
 
