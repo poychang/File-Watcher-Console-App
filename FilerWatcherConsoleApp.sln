@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilerWatcherConsoleApp", "FilerWatcherConsoleApp\FilerWatcherConsoleApp.csproj", "{98AEC1C8-2850-4772-AFD7-8F6F94D48E68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContinueCreateFileApp", "ContinueCreateFileApp\ContinueCreateFileApp.csproj", "{380771A0-B169-4CC8-8D9A-3851DCDA083A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{98AEC1C8-2850-4772-AFD7-8F6F94D48E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98AEC1C8-2850-4772-AFD7-8F6F94D48E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98AEC1C8-2850-4772-AFD7-8F6F94D48E68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{380771A0-B169-4CC8-8D9A-3851DCDA083A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{380771A0-B169-4CC8-8D9A-3851DCDA083A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{380771A0-B169-4CC8-8D9A-3851DCDA083A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{380771A0-B169-4CC8-8D9A-3851DCDA083A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
