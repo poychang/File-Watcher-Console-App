@@ -13,7 +13,7 @@ namespace FileWatcherConsoleApp
         private readonly System.IO.FileSystemWatcher _watch;
         private readonly int _lastLineBuffer;
 
-        public FileSystemWatcher(string watchFolder, int lastLineBuffer)
+        public FileSystemWatcher(string watchFolder)
         {
             _watch = new System.IO.FileSystemWatcher
             {
@@ -28,7 +28,7 @@ namespace FileWatcherConsoleApp
                 // 設定是否啟動元件，必須要設定為 true，否則事件是不會被觸發
                 EnableRaisingEvents = true
             };
-            _lastLineBuffer = lastLineBuffer;
+            _lastLineBuffer = 2;
         }
 
         /// <summary>
@@ -98,12 +98,31 @@ namespace FileWatcherConsoleApp
             _sb.AppendLine($"檔案所在位址為：{e.FullPath.Replace(e.Name, "")}");
             _sb.AppendLine($"異動內容時間為：{_dirInfo.LastWriteTime}");
             _sb.AppendLine($"異動內容：");
+            //Console.WriteLine(_sb.ToString());
 
-            Console.WriteLine(_sb.ToString());
+            var data = File.ReadLines(e.FullPath).TakeLast(_lastLineBuffer).ToList();
+            var lastRecord = data.First().Split('\t');
+            var currentRecord = data.Last().Split('\t');
+            Console.WriteLine($"{ currentRecord[0]} Current Record of Product Tracking Packages In Process (n/a): { currentRecord[73]}");
+            Console.WriteLine($"{ currentRecord[0]} Current Record of Product Tracking This Recipe Current Count (n/a): { currentRecord[76]}");
 
-            foreach (var line in File.ReadLines(e.FullPath).TakeLast(_lastLineBuffer))
+            if (int.Parse(currentRecord[73]) > int.Parse(lastRecord[73]) && int.Parse(currentRecord[76]) > int.Parse(lastRecord[76]))
             {
-                Console.WriteLine(line);
+                Console.WriteLine("----------");
+                Console.WriteLine("進板");
+                Console.WriteLine("----------");
+            }
+            if (int.Parse(currentRecord[73]) < int.Parse(lastRecord[73]) && int.Parse(currentRecord[76]) == int.Parse(lastRecord[76]))
+            {
+                Console.WriteLine("----------");
+                Console.WriteLine("出板");
+                Console.WriteLine("----------");
+            }
+            if (int.Parse(currentRecord[73]) == int.Parse(lastRecord[73]) && int.Parse(currentRecord[76]) > int.Parse(lastRecord[76]))
+            {
+                Console.WriteLine("----------");
+                Console.WriteLine("出板");
+                Console.WriteLine("----------");
             }
         }
 

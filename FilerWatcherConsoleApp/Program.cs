@@ -10,7 +10,7 @@ namespace FileWatcherConsoleApp
             Console.WriteLine($"Monitoring file changed in target folder.");
             Console.WriteLine($"Target Folder: {monitoringPath}");
 
-            new FileSystemWatcher(monitoringPath, 1)
+            new FileSystemWatcher(monitoringPath)
                 .WatchCreated()
                 .WatchChanged();
 
