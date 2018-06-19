@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FilerWatcherConsoleApp
+namespace FileWatcherConsoleApp
 {
     public class Program
     {

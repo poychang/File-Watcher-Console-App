@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilerWatcherConsoleApp", "FilerWatcherConsoleApp\FilerWatcherConsoleApp.csproj", "{98AEC1C8-2850-4772-AFD7-8F6F94D48E68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileWatcherConsoleApp", "FilerWatcherConsoleApp\FileWatcherConsoleApp.csproj", "{98AEC1C8-2850-4772-AFD7-8F6F94D48E68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContinueCreateFileApp", "ContinueCreateFileApp\ContinueCreateFileApp.csproj", "{380771A0-B169-4CC8-8D9A-3851DCDA083A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContinueCreateFileApp", "ContinueCreateFileApp\ContinueCreateFileApp.csproj", "{380771A0-B169-4CC8-8D9A-3851DCDA083A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

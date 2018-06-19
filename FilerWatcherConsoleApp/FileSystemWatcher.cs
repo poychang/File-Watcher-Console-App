@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace FilerWatcherConsoleApp
+namespace FileWatcherConsoleApp
 {
     public class FileSystemWatcher
     {
